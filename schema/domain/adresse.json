@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "$id": "https://fiks.ks.no/bekymringsmelding.types.adresse.json",
+  "title": "Adresse",
+  "type": "object",
+  "required": [
+    "adresselinje1"
+  ],
+  "properties": {
+    "adresselinje1": {
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "adresselinje2": {
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "adresselinje3": {
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "postnummer": {
+      "type": "string",
+      "pattern": "^(.*)$"
+    },
+    "poststed": {
+      "type": "string",
+      "pattern": "^(.*)$"
+    }
+  }
+}

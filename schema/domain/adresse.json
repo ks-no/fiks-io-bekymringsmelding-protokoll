@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://fiks.ks.no/bekymringsmelding.types.adresse.json",
+  "$id": "https://fiks.ks.no/bekymringsmelding.adresse.json",
   "title": "Adresse",
   "type": "object",
   "required": [

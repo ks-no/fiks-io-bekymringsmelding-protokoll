@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://fiks.ks.no/bekymringsmelding.privat.v1.schema.json",
+  "$id": "https://fiks.ks.no/bekymringsmelding.privat.v1.json",
   "title": "Privat bekymringsmelding",
   "type": "object",
   "required": [
@@ -53,7 +53,7 @@
           "type": "boolean"
         },
         "adresse": {
-          "$ref": "adresse.json"
+          "$ref": "./adresse.json"
         }
       }
     },
@@ -79,7 +79,7 @@
             "pattern": "^(.*)$"
           },
           "adresse": {
-            "$ref": "adresse.json"
+            "$ref": "./adresse.json"
           }
         }
       }

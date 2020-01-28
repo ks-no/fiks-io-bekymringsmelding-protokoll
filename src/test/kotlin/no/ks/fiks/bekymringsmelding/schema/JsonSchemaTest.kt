@@ -1,3 +1,5 @@
+package no.ks.fiks.bekymringsmelding.schema
+
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
@@ -60,7 +62,6 @@ class JsonSchemaTest : StringSpec() {
             offentligBekymringsmelding.bydelsnavn shouldBe "Bergenhus"
 
             // Melder
-            offentligBekymringsmelding.offentligMelder.fnr shouldBe "22078347825"
             offentligBekymringsmelding.offentligMelder.personnavn shouldBe "Navnesen Navn Mellomnavn"
             offentligBekymringsmelding.offentligMelder.rolle shouldBe "Lærer"
             offentligBekymringsmelding.offentligMelder.telefonnummer shouldBe "99999999"
@@ -78,7 +79,6 @@ class JsonSchemaTest : StringSpec() {
             offentligBekymringsmelding.offentligBarn[0].ufoedt shouldBe false
             offentligBekymringsmelding.offentligBarn[0].personnavn shouldBe "Barn Barnesen"
             offentligBekymringsmelding.offentligBarn[0].telefonnummer shouldBe "12121212"
-            offentligBekymringsmelding.offentligBarn[0].relasjon shouldBe "Lærer"
             offentligBekymringsmelding.offentligBarn[0].adresse.adresselinje1 shouldBe "Rådhusgaten 10"
             offentligBekymringsmelding.offentligBarn[0].adresse.adresselinje2 shouldBe ""
             offentligBekymringsmelding.offentligBarn[0].adresse.adresselinje3 shouldBe ""
@@ -90,7 +90,6 @@ class JsonSchemaTest : StringSpec() {
             offentligBekymringsmelding.offentligBarn[1].ufoedt shouldBe false
             offentligBekymringsmelding.offentligBarn[1].personnavn shouldBe "Bare Barnet"
             offentligBekymringsmelding.offentligBarn[1].telefonnummer shouldBe "13131313"
-            offentligBekymringsmelding.offentligBarn[1].relasjon shouldBe "Lærer til søsteren"
             offentligBekymringsmelding.offentligBarn[1].adresse.adresselinje1 shouldBe "Rådhusgaten 10"
             offentligBekymringsmelding.offentligBarn[1].adresse.adresselinje2 shouldBe ""
             offentligBekymringsmelding.offentligBarn[1].adresse.adresselinje3 shouldBe ""

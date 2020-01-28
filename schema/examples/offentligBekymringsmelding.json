@@ -4,7 +4,6 @@
   "bydelsnummer": "02",
   "bydelsnavn": "Bergenhus",
   "offentligMelder": {
-    "fnr": "22078347825",
     "personnavn": "Navnesen Navn Mellomnavn",
     "rolle": "Lærer",
     "telefonnummer": "99999999",
@@ -27,7 +26,6 @@
       "ufoedt": false,
       "personnavn": "Barn Barnesen",
       "telefonnummer": "12121212",
-      "relasjon": "Lærer",
       "adresse": {
         "adresselinje1": "Rådhusgaten 10",
         "adresselinje2": "",
@@ -43,7 +41,6 @@
       "ufoedt": false,
       "personnavn": "Bare Barnet",
       "telefonnummer": "13131313",
-      "relasjon": "Lærer til søsteren",
       "adresse": {
         "adresselinje1": "Rådhusgaten 10",
         "adresselinje2": "",

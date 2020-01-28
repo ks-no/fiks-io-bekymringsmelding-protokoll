@@ -68,7 +68,6 @@
     "offentligMelder": {
       "type": "object",
       "required": [
-        "fnr",
         "personnavn",
         "rolle",
         "telefonnummer",
@@ -76,10 +75,6 @@
         "virksomhet"
       ],
       "properties": {
-        "fnr": {
-          "type": "string",
-          "pattern": "^[0-9]{11}$"
-        },
         "personnavn": {
           "$ref": "#/definitions/personnavn"
         },
@@ -125,7 +120,6 @@
           "fnr",
           "ufoedt",
           "personnavn",
-          "relasjon",
           "adresse",
           "orientert"
         ],
@@ -141,10 +135,6 @@
             "$ref": "#/definitions/personnavn"
           },
           "telefonnummer": {
-            "type": "string",
-            "pattern": "^(.*)$"
-          },
-          "relasjon": {
             "type": "string",
             "pattern": "^(.*)$"
           },

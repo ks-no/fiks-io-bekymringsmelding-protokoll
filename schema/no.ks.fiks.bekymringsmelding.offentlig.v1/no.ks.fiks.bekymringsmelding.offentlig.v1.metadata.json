@@ -1,0 +1,7 @@
+[
+  {
+    "meldingstype": "no.ks.fiks.bekymringsmelding.offentlig.v1",
+    "beskrivelse": "En offentlig bekymringsmelding.",
+    "body": "required"
+  }
+]

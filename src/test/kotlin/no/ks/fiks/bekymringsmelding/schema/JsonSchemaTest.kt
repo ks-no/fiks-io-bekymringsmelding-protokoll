@@ -3,7 +3,7 @@ package no.ks.fiks.bekymringsmelding.schema
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
-import no.ks.fiks.bekymringsmelding.schema.domain.Melding
+import no.ks.fiks.bekymringsmelding.schema.domain.Feilmelding
 import no.ks.fiks.bekymringsmelding.schema.domain.OffentligBekymringsmeldingV1
 import no.ks.fiks.bekymringsmelding.schema.domain.PrivatBekymringsmeldingV1
 import org.apache.commons.io.IOUtils
@@ -113,16 +113,16 @@ class JsonSchemaTest : StringSpec() {
 
         "Test at man kan sette feilmelding" {
             val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/feilmelding.json"), "UTF-8")
-            val melding = ObjectMapper().readValue(resource, Melding::class.java)
+            val feilmelding = ObjectMapper().readValue(resource, Feilmelding::class.java)
 
-            melding.feilmelding shouldBe "Kunne ikke parse JSON-filen bekymringsmelding.json"
+            feilmelding.melding shouldBe "Kunne ikke parse JSON-filen bekymringsmelding.json"
         }
 
         "Test at man ikke trenger å skrive noe i feilmeldingen" {
             val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/feilmelding_tom.json"), "UTF-8")
-            val melding = ObjectMapper().readValue(resource, Melding::class.java)
+            val feilmelding = ObjectMapper().readValue(resource, Feilmelding::class.java)
 
-            melding.feilmelding shouldBe null
+            feilmelding.melding shouldBe null
         }
     }
 }

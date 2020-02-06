@@ -1,10 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2019-09/schema",
-  "$id": "https://fiks.ks.no/bekymringsmelding.melding.json",
-  "title": "Melding",
+  "$id": "https://fiks.ks.no/bekymringsmelding.feilmelding.json",
+  "title": "Feilmelding",
   "type": "object",
   "properties": {
-    "feilmelding": {
+    "melding": {
       "type": "string",
       "pattern": "^(.*)$"
     }

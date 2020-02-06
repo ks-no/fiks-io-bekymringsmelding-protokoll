@@ -3,6 +3,7 @@ package no.ks.fiks.bekymringsmelding.schema
 import com.fasterxml.jackson.databind.ObjectMapper
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
+import no.ks.fiks.bekymringsmelding.schema.domain.Melding
 import no.ks.fiks.bekymringsmelding.schema.domain.OffentligBekymringsmeldingV1
 import no.ks.fiks.bekymringsmelding.schema.domain.PrivatBekymringsmeldingV1
 import org.apache.commons.io.IOUtils
@@ -108,6 +109,20 @@ class JsonSchemaTest : StringSpec() {
             offentligBekymringsmelding.andreHjelpeinstanser shouldBe "Nei, ikke vært i kontakt med andre hjelpeinstanser."
             offentligBekymringsmelding.melding.melding shouldBe "Her kommer selve innholdet i bekymringsmeldingen!"
             offentligBekymringsmelding.melding.historie shouldBe "Her kommer selve historien i bekymringsmeldingen!"
+        }
+
+        "Test at man kan sette feilmelding" {
+            val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/feilmelding.json"), "UTF-8")
+            val melding = ObjectMapper().readValue(resource, Melding::class.java)
+
+            melding.feilmelding shouldBe "Kunne ikke parse JSON-filen bekymringsmelding.json"
+        }
+
+        "Test at man ikke trenger å skrive noe i feilmeldingen" {
+            val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/feilmelding_tom.json"), "UTF-8")
+            val melding = ObjectMapper().readValue(resource, Melding::class.java)
+
+            melding.feilmelding shouldBe null
         }
     }
 }

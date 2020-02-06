@@ -1,0 +1,5 @@
+{
+  "meldingstype": "no.ks.fiks.bekymringsmelding.feilet.v1",
+  "beskrivelse": "Kvittering på at noe feilet ved mottak av en bekymringsmelding.",
+  "body": "required"
+}

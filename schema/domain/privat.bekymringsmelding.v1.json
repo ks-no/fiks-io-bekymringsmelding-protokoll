@@ -11,7 +11,8 @@
     "privatMelder",
     "privatBarn",
     "melding",
-    "sendingstidspunkt"
+    "sendingstidspunkt",
+    "leveringskanal"
   ],
   "properties": {
     "kommunenummer": {

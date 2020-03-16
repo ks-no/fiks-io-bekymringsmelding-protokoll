@@ -46,7 +46,9 @@
     "offentligMelder",
     "offentligBarn",
     "foresatte",
-    "melding"
+    "melding",
+    "sendingstidspunkt",
+    "leveringskanal"
   ],
   "properties": {
     "kommunenummer": {

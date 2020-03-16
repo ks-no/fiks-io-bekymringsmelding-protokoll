@@ -1,20 +1,23 @@
 package no.ks.fiks.bekymringsmelding.schema
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 import no.ks.fiks.bekymringsmelding.schema.domain.Feilmelding
 import no.ks.fiks.bekymringsmelding.schema.domain.OffentligBekymringsmeldingV1
 import no.ks.fiks.bekymringsmelding.schema.domain.PrivatBekymringsmeldingV1
 import org.apache.commons.io.IOUtils
-
+import java.time.LocalDateTime
 
 class JsonSchemaTest : StringSpec() {
+
+    val objectMapper = ObjectMapper().registerModule(JavaTimeModule())
 
     init {
         "Test at eksempel på JSON-fil validerer med generert POJO for privat bekymringsmelding" {
             val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/privatBekymringsmelding.json"), "UTF-8")
-            val privatBekymringsmelding = ObjectMapper().readValue(resource, PrivatBekymringsmeldingV1::class.java)
+            val privatBekymringsmelding = objectMapper.readValue(resource, PrivatBekymringsmeldingV1::class.java)
 
             privatBekymringsmelding.kommunenummer shouldBe "1201"
             privatBekymringsmelding.kommunenavn shouldBe "Bergen"
@@ -51,11 +54,13 @@ class JsonSchemaTest : StringSpec() {
             privatBekymringsmelding.privatBarn[1].adresse.poststed shouldBe "Bergen"
 
             privatBekymringsmelding.melding shouldBe "Her kommer selve innholdet i bekymringsmeldingen!"
+            privatBekymringsmelding.sendingstidspunkt shouldBe LocalDateTime.parse("2020-03-17T00:31:56")
+            privatBekymringsmelding.leveringskanal shouldBe PrivatBekymringsmeldingV1.Leveringskanal.FAGSYSTEM
         }
 
         "Test at eksempel på JSON-fil validerer med generert POJO for offentlig bekymringsmelding" {
             val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/offentligBekymringsmelding.json"), "UTF-8")
-            val offentligBekymringsmelding = ObjectMapper().readValue(resource, OffentligBekymringsmeldingV1::class.java)
+            val offentligBekymringsmelding = objectMapper.readValue(resource, OffentligBekymringsmeldingV1::class.java)
 
             offentligBekymringsmelding.kommunenummer shouldBe "1201"
             offentligBekymringsmelding.kommunenavn shouldBe "Bergen"
@@ -109,6 +114,9 @@ class JsonSchemaTest : StringSpec() {
             offentligBekymringsmelding.andreHjelpeinstanser shouldBe "Nei, ikke vært i kontakt med andre hjelpeinstanser."
             offentligBekymringsmelding.melding.melding shouldBe "Her kommer selve innholdet i bekymringsmeldingen!"
             offentligBekymringsmelding.melding.historie shouldBe "Her kommer selve historien i bekymringsmeldingen!"
+
+            offentligBekymringsmelding.sendingstidspunkt shouldBe LocalDateTime.parse("2020-03-16T13:29:33")
+            offentligBekymringsmelding.leveringskanal shouldBe OffentligBekymringsmeldingV1.Leveringskanal.FAGSYSTEM
         }
 
         "Test at man kan sette feilmelding" {

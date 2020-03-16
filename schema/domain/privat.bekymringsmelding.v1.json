@@ -10,7 +10,8 @@
     "bydelsnavn",
     "privatMelder",
     "privatBarn",
-    "melding"
+    "melding",
+    "sendingstidspunkt"
   ],
   "properties": {
     "kommunenummer": {
@@ -87,6 +88,14 @@
     "melding": {
       "type": "string",
       "pattern": "^(.*)$"
+    },
+    "sendingstidspunkt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "leveringskanal": {
+      "type": "string",
+      "enum": ["SKJEMA", "FAGSYSTEM"]
     }
   }
 }

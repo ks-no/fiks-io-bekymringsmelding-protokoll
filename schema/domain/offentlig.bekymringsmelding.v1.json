@@ -180,6 +180,14 @@
           "pattern": "^(.*)$"
         }
       }
+    },
+    "sendingstidspunkt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "leveringskanal": {
+      "type": "string",
+      "enum": ["SKJEMA", "FAGSYSTEM"]
     }
   }
 }

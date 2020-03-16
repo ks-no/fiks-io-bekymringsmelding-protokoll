@@ -18,7 +18,7 @@
     <properties>
         <commons-lang.version>2.6</commons-lang.version>
         <kotlintest.version>3.3.2</kotlintest.version>
-        <jackson-databind.version>2.10.1</jackson-databind.version>
+        <jackson.version>2.10.1</jackson.version>
         <jsonschema2pojo-maven-plugin.version>1.0.1</jsonschema2pojo-maven-plugin.version>
         <json-schema-validator.version>1.0.29</json-schema-validator.version>
     </properties>
@@ -32,7 +32,12 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>${jackson-databind.version}</version>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.datatype</groupId>
+            <artifactId>jackson-datatype-jsr310</artifactId>
+            <version>${jackson.version}</version>
         </dependency>
 
         <dependency>
@@ -69,6 +74,8 @@
                 <configuration>
                     <sourceDirectory>${basedir}/schema</sourceDirectory>
                     <targetPackage>no.ks.fiks.bekymringsmelding.schema</targetPackage>
+                    <dateTimeType>java.time.LocalDateTime</dateTimeType>
+                    <dateType>java.time.LocalDate</dateType>
                     <includeAdditionalProperties>false</includeAdditionalProperties>
                     <generateBuilders>true</generateBuilders>
                     <formatTypeMapping>

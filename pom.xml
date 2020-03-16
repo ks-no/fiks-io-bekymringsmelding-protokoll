@@ -17,7 +17,7 @@
 
     <properties>
         <commons-lang.version>2.6</commons-lang.version>
-        <kotlintest.version>3.3.2</kotlintest.version>
+        <kotlintest.version>3.4.2</kotlintest.version>
         <jackson.version>2.10.3</jackson.version>
         <jsonschema2pojo-maven-plugin.version>1.0.1</jsonschema2pojo-maven-plugin.version>
         <json-schema-validator.version>1.0.35</json-schema-validator.version>

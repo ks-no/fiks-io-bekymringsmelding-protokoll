@@ -127,8 +127,7 @@
         ],
         "properties": {
           "fnr": {
-            "type": "string",
-            "pattern": "^(.*)$"
+            "type": "string"
           },
           "ufoedt": {
             "type": "boolean"
@@ -137,8 +136,7 @@
             "$ref": "#/definitions/personnavn"
           },
           "telefonnummer": {
-            "type": "string",
-            "pattern": "^(.*)$"
+            "type": "string"
           },
           "adresse": {
             "$ref": "adresse.json"
@@ -159,12 +157,10 @@
       }
     },
     "behovForTolk": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "andreHjelpeinstanser": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "melding": {
       "type": "object",
@@ -174,12 +170,10 @@
       ],
       "properties": {
         "melding": {
-          "type": "string",
-          "pattern": "^(.*)$"
+          "type": "string"
         },
         "historie": {
-          "type": "string",
-          "pattern": "^(.*)$"
+          "type": "string"
         }
       }
     },
@@ -188,8 +182,7 @@
       "format": "date-time"
     },
     "leveringskanal": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     }
   }
 }

@@ -20,16 +20,14 @@
       "pattern": "^\\d{4}$"
     },
     "kommunenavn": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "bydelsnummer": {
       "type": "string",
       "pattern": "^[0-9]{2}$"
     },
     "bydelsnavn": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "privatMelder": {
       "type": "object",
@@ -44,8 +42,7 @@
           "pattern": "^[0-9]{11}$"
         },
         "personnavn": {
-          "type": "string",
-          "pattern": "^(.*)$"
+          "type": "string"
         },
         "telefonnummer": {
           "type": "string",
@@ -69,16 +66,13 @@
         ],
         "properties": {
           "personnavn": {
-            "type": "string",
-            "pattern": "^(.*)$"
+            "type": "string"
           },
           "antattAlder": {
-            "type": "string",
-            "pattern": "^(.*)$"
+            "type": "string"
           },
           "relasjon": {
-            "type": "string",
-            "pattern": "^(.*)$"
+            "type": "string"
           },
           "adresse": {
             "$ref": "./adresse.json"
@@ -87,16 +81,14 @@
       }
     },
     "melding": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "sendingstidspunkt": {
       "type": "string",
       "format": "date-time"
     },
     "leveringskanal": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     }
   }
 }

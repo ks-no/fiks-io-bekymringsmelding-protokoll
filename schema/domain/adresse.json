@@ -8,24 +8,19 @@
   ],
   "properties": {
     "adresselinje1": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "adresselinje2": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "adresselinje3": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "postnummer": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     },
     "poststed": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     }
   }
 }

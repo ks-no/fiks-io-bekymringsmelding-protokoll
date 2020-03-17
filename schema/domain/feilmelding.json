@@ -5,8 +5,7 @@
   "type": "object",
   "properties": {
     "melding": {
-      "type": "string",
-      "pattern": "^(.*)$"
+      "type": "string"
     }
   }
 }

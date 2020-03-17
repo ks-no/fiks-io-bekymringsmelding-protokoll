@@ -96,7 +96,7 @@
     },
     "leveringskanal": {
       "type": "string",
-      "enum": ["SKJEMA", "FAGSYSTEM"]
+      "pattern": "^(.*)$"
     }
   }
 }

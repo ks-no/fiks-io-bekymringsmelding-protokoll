@@ -55,7 +55,7 @@ class JsonSchemaTest : StringSpec() {
 
             privatBekymringsmelding.melding shouldBe "Her kommer selve innholdet i bekymringsmeldingen!"
             privatBekymringsmelding.sendingstidspunkt shouldBe LocalDateTime.parse("2020-03-17T00:31:56")
-            privatBekymringsmelding.leveringskanal shouldBe PrivatBekymringsmeldingV1.Leveringskanal.FAGSYSTEM
+            privatBekymringsmelding.leveringskanal shouldBe "Fagsystem"
         }
 
         "Test at eksempel på JSON-fil validerer med generert POJO for offentlig bekymringsmelding" {
@@ -116,7 +116,7 @@ class JsonSchemaTest : StringSpec() {
             offentligBekymringsmelding.melding.historie shouldBe "Her kommer selve historien i bekymringsmeldingen!"
 
             offentligBekymringsmelding.sendingstidspunkt shouldBe LocalDateTime.parse("2020-03-16T13:29:33")
-            offentligBekymringsmelding.leveringskanal shouldBe OffentligBekymringsmeldingV1.Leveringskanal.FAGSYSTEM
+            offentligBekymringsmelding.leveringskanal shouldBe "Fagsystem"
         }
 
         "Test at man kan sette feilmelding" {

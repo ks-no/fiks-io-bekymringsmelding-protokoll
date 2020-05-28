@@ -32,15 +32,10 @@
     "privatMelder": {
       "type": "object",
       "required": [
-        "fnr",
         "personnavn",
         "skjultIdentitet"
       ],
       "properties": {
-        "fnr": {
-          "type": "string",
-          "pattern": "^[0-9]{11}$"
-        },
         "personnavn": {
           "type": "string"
         },

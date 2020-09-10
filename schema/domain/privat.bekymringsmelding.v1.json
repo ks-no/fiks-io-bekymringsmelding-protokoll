@@ -32,7 +32,7 @@
     "privatMelder": {
       "type": "object",
       "required": [
-        "personnavn",
+        "personnavn"
       ],
       "properties": {
         "personnavn": {

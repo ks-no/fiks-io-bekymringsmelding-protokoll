@@ -6,7 +6,6 @@
   "privatMelder": {
     "personnavn": "Navnesen Navn Mellomnavn",
     "telefonnummer": "99999999",
-    "skjultIdentitet": true,
     "adresse": {
       "adresselinje1": "Rosenkrantzgaten 3",
       "adresselinje2": "",

@@ -27,7 +27,6 @@ class JsonSchemaTest : StringSpec() {
             // Melder
             privatBekymringsmelding.privatMelder.personnavn shouldBe "Navnesen Navn Mellomnavn"
             privatBekymringsmelding.privatMelder.telefonnummer shouldBe "99999999"
-            privatBekymringsmelding.privatMelder.skjultIdentitet shouldBe true
             privatBekymringsmelding.privatMelder.adresse.adresselinje1 shouldBe "Rosenkrantzgaten 3"
             privatBekymringsmelding.privatMelder.adresse.adresselinje2 shouldBe ""
             privatBekymringsmelding.privatMelder.adresse.adresselinje3 shouldBe ""

@@ -33,7 +33,6 @@
       "type": "object",
       "required": [
         "personnavn",
-        "skjultIdentitet"
       ],
       "properties": {
         "personnavn": {
@@ -42,10 +41,7 @@
         "telefonnummer": {
           "type": "string",
           "pattern": "^[+]?[0-9]+([- ][0-9]+)*$"
-        },
-        "skjultIdentitet": {
-          "type": "boolean"
-        },
+        }
         "adresse": {
           "$ref": "./adresse.json"
         }

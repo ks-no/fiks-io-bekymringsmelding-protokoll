@@ -20,7 +20,7 @@
         <kotlintest.version>3.4.2</kotlintest.version>
         <jackson.version>2.11.2</jackson.version>
         <jsonschema2pojo-maven-plugin.version>1.0.2</jsonschema2pojo-maven-plugin.version>
-        <json-schema-validator.version>1.0.43</json-schema-validator.version>
+        <json-schema-validator.version>1.0.46</json-schema-validator.version>
     </properties>
 
     <dependencies>

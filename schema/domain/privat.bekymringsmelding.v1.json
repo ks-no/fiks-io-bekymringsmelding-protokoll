@@ -49,6 +49,7 @@
     },
     "privatBarn": {
       "type": "array",
+      "minLength": 1,
       "items": {
         "type": "object",
         "required": [

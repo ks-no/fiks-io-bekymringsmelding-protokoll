@@ -16,7 +16,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <commons-lang3.version>3.12.0</commons-lang3.version>
+        <commons-lang3.version>3.13.0</commons-lang3.version>
         <kotlintest.version>3.4.2</kotlintest.version>
         <jackson.version>2.15.2</jackson.version>
         <jsonschema2pojo-maven-plugin.version>1.2.1</jsonschema2pojo-maven-plugin.version>

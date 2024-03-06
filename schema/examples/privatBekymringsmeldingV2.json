@@ -1,0 +1,46 @@
+{
+  "kommunenummer": "1201",
+  "kommunenavn": "Bergen",
+  "bydelsnummer": "02",
+  "bydelsnavn": "Bergenhus",
+  "privatMelder": {
+    "personnavn": "Navnesen Navn Mellomnavn",
+    "telefonnummer": "99999999",
+    "adresse": {
+      "adresselinje1": "Rosenkrantzgaten 3",
+      "adresselinje2": "",
+      "adresselinje3": "",
+      "postnummer": "5003",
+      "poststed": "Bergen"
+    }
+  },
+  "privatBarn": [
+    {
+      "personnavn": "Barn Barnesen",
+      "antattAlder": "10",
+      "relasjon": "Nabo, fritekstfelt",
+      "adresse": {
+        "adresselinje1": "Rådhusgaten 10",
+        "adresselinje2": "",
+        "adresselinje3": "",
+        "postnummer": "5020",
+        "poststed": "Bergen"
+      }
+    },
+    {
+      "personnavn": "Bare Barnet",
+      "antattAlder": "10",
+      "relasjon": "Nabo, fritekstfelt",
+      "adresse": {
+        "adresselinje1": "Rådhusgaten 10",
+        "adresselinje2": "",
+        "adresselinje3": "",
+        "postnummer": "5020",
+        "poststed": "Bergen"
+      }
+    }
+  ],
+  "melding": "Her kommer selve innholdet i bekymringsmeldingen!",
+  "sendingstidspunkt": "2020-03-17T00:31:56",
+  "leveringskanal": "Fagsystem"
+}

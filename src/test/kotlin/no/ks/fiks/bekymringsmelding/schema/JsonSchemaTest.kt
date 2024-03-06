@@ -5,8 +5,8 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 import no.ks.fiks.bekymringsmelding.schema.domain.Feilmelding
-import no.ks.fiks.bekymringsmelding.schema.domain.v1.OffentligBekymringsmeldingV1
-import no.ks.fiks.bekymringsmelding.schema.domain.v1.PrivatBekymringsmeldingV1
+import no.ks.fiks.bekymringsmelding.schema.domain.OffentligBekymringsmeldingV1
+import no.ks.fiks.bekymringsmelding.schema.domain.PrivatBekymringsmeldingV1
 import no.ks.fiks.bekymringsmelding.schema.domain.v2.OffentligBekymringsmeldingV2
 
 import org.apache.commons.io.IOUtils

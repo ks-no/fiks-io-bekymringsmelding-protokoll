@@ -1,0 +1,7 @@
+[
+  {
+    "meldingstype": "no.ks.fiks.bekymringsmelding.privat.v2",
+    "beskrivelse": "En privat bekymringsmelding.",
+    "body": "required"
+  }
+]

@@ -17,8 +17,8 @@ class JsonSchemaTest : StringSpec() {
     val objectMapper = ObjectMapper().registerModule(JavaTimeModule())
 
     init {
-        "Test at eksempel på JSON-fil validerer med generert POJO for privat bekymringsmelding" {
-            val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/privatBekymringsmelding.json"), "UTF-8")
+        "Test at eksempel på JSON-fil validerer med generert POJO for privat bekymringsmelding v1" {
+            val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/privatBekymringsmeldingV1.json"), "UTF-8")
             val privatBekymringsmelding = objectMapper.readValue(resource, PrivatBekymringsmeldingV1::class.java)
 
             privatBekymringsmelding.kommunenummer shouldBe "1201"
@@ -57,6 +57,48 @@ class JsonSchemaTest : StringSpec() {
             privatBekymringsmelding.sendingstidspunkt shouldBe LocalDateTime.parse("2020-03-17T00:31:56")
             privatBekymringsmelding.leveringskanal shouldBe "Fagsystem"
         }
+
+        "Test at eksempel på JSON-fil validerer med generert POJO for privat bekymringsmelding v2" {
+            val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/privatBekymringsmeldingV2.json"), "UTF-8")
+            val privatBekymringsmelding = objectMapper.readValue(resource, PrivatBekymringsmeldingV1::class.java)
+
+            privatBekymringsmelding.kommunenummer shouldBe "1201"
+            privatBekymringsmelding.kommunenavn shouldBe "Bergen"
+            privatBekymringsmelding.bydelsnummer shouldBe "02"
+            privatBekymringsmelding.bydelsnavn shouldBe "Bergenhus"
+
+            // Melder
+            privatBekymringsmelding.privatMelder.personnavn shouldBe "Navnesen Navn Mellomnavn"
+            privatBekymringsmelding.privatMelder.telefonnummer shouldBe "99999999"
+            privatBekymringsmelding.privatMelder.adresse.adresselinje1 shouldBe "Rosenkrantzgaten 3"
+            privatBekymringsmelding.privatMelder.adresse.adresselinje2 shouldBe ""
+            privatBekymringsmelding.privatMelder.adresse.adresselinje3 shouldBe ""
+            privatBekymringsmelding.privatMelder.adresse.postnummer shouldBe "5003"
+            privatBekymringsmelding.privatMelder.adresse.poststed shouldBe "Bergen"
+
+            // Barn
+            privatBekymringsmelding.privatBarn[0].personnavn shouldBe "Barn Barnesen"
+            privatBekymringsmelding.privatBarn[0].antattAlder shouldBe "10"
+            privatBekymringsmelding.privatBarn[0].relasjon shouldBe "Nabo, fritekstfelt"
+            privatBekymringsmelding.privatBarn[0].adresse.adresselinje1 shouldBe "Rådhusgaten 10"
+            privatBekymringsmelding.privatBarn[0].adresse.adresselinje2 shouldBe ""
+            privatBekymringsmelding.privatBarn[0].adresse.adresselinje3 shouldBe ""
+            privatBekymringsmelding.privatBarn[0].adresse.postnummer shouldBe "5020"
+            privatBekymringsmelding.privatBarn[0].adresse.poststed shouldBe "Bergen"
+            privatBekymringsmelding.privatBarn[1].personnavn shouldBe "Bare Barnet"
+            privatBekymringsmelding.privatBarn[1].antattAlder shouldBe "10"
+            privatBekymringsmelding.privatBarn[1].relasjon shouldBe "Nabo, fritekstfelt"
+            privatBekymringsmelding.privatBarn[1].adresse.adresselinje1 shouldBe "Rådhusgaten 10"
+            privatBekymringsmelding.privatBarn[1].adresse.adresselinje2 shouldBe ""
+            privatBekymringsmelding.privatBarn[1].adresse.adresselinje3 shouldBe ""
+            privatBekymringsmelding.privatBarn[1].adresse.postnummer shouldBe "5020"
+            privatBekymringsmelding.privatBarn[1].adresse.poststed shouldBe "Bergen"
+
+            privatBekymringsmelding.melding shouldBe "Her kommer selve innholdet i bekymringsmeldingen!"
+            privatBekymringsmelding.sendingstidspunkt shouldBe LocalDateTime.parse("2020-03-17T00:31:56")
+            privatBekymringsmelding.leveringskanal shouldBe "Fagsystem"
+        }
+
 
         "Test at eksempel på JSON-fil validerer med generert POJO for offentlig bekymringsmelding v1" {
             val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/offentligBekymringsmeldingV1.json"), "UTF-8")

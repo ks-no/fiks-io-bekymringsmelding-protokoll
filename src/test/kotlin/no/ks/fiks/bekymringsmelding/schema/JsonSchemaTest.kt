@@ -59,7 +59,7 @@ class JsonSchemaTest : StringSpec() {
         }
 
         "Test at eksempel på JSON-fil validerer med generert POJO for offentlig bekymringsmelding v1" {
-            val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/offentligBekymringsmelding.json"), "UTF-8")
+            val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/offentligBekymringsmeldingV1.json"), "UTF-8")
             val offentligBekymringsmelding = objectMapper.readValue(resource, OffentligBekymringsmeldingV1::class.java)
 
             offentligBekymringsmelding.kommunenummer shouldBe "1201"
@@ -120,7 +120,7 @@ class JsonSchemaTest : StringSpec() {
         }
 
         "Test at eksempel på JSON-fil validerer med generert POJO for offentlig bekymringsmelding v2" {
-            val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/offentligBekymringsmelding.json"), "UTF-8")
+            val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/offentligBekymringsmeldingV2.json"), "UTF-8")
             val offentligBekymringsmelding = objectMapper.readValue(resource, OffentligBekymringsmeldingV2::class.java)
 
             offentligBekymringsmelding.kommunenummer shouldBe "1201"

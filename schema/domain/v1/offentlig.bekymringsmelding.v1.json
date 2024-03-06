@@ -108,7 +108,7 @@
               "pattern": "^(.*)$"
             },
             "adresse": {
-              "$ref": "adresse.json"
+              "$ref": "../adresse.json"
             }
           }
         }
@@ -140,7 +140,7 @@
             "type": "string"
           },
           "adresse": {
-            "$ref": "adresse.json"
+            "$ref": "../adresse.json"
           },
           "orientert": {
             "$ref": "#/definitions/orientert"

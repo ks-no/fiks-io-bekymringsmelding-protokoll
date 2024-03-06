@@ -5,8 +5,10 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule
 import io.kotlintest.shouldBe
 import io.kotlintest.specs.StringSpec
 import no.ks.fiks.bekymringsmelding.schema.domain.Feilmelding
-import no.ks.fiks.bekymringsmelding.schema.domain.OffentligBekymringsmeldingV1
-import no.ks.fiks.bekymringsmelding.schema.domain.PrivatBekymringsmeldingV1
+import no.ks.fiks.bekymringsmelding.schema.domain.v1.OffentligBekymringsmeldingV1
+import no.ks.fiks.bekymringsmelding.schema.domain.v1.PrivatBekymringsmeldingV1
+import no.ks.fiks.bekymringsmelding.schema.domain.v2.OffentligBekymringsmeldingV2
+
 import org.apache.commons.io.IOUtils
 import java.time.LocalDateTime
 
@@ -56,9 +58,70 @@ class JsonSchemaTest : StringSpec() {
             privatBekymringsmelding.leveringskanal shouldBe "Fagsystem"
         }
 
-        "Test at eksempel på JSON-fil validerer med generert POJO for offentlig bekymringsmelding" {
+        "Test at eksempel på JSON-fil validerer med generert POJO for offentlig bekymringsmelding v1" {
             val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/offentligBekymringsmelding.json"), "UTF-8")
             val offentligBekymringsmelding = objectMapper.readValue(resource, OffentligBekymringsmeldingV1::class.java)
+
+            offentligBekymringsmelding.kommunenummer shouldBe "1201"
+            offentligBekymringsmelding.kommunenavn shouldBe "Bergen"
+            offentligBekymringsmelding.bydelsnummer shouldBe "02"
+            offentligBekymringsmelding.bydelsnavn shouldBe "Bergenhus"
+
+            // Melder
+            offentligBekymringsmelding.offentligMelder.personnavn shouldBe "Navnesen Navn Mellomnavn"
+            offentligBekymringsmelding.offentligMelder.rolle shouldBe "Lærer"
+            offentligBekymringsmelding.offentligMelder.telefonnummer shouldBe "99999999"
+            offentligBekymringsmelding.offentligMelder.epost shouldBe "lærer@skole.no"
+            offentligBekymringsmelding.offentligMelder.virksomhet.navn shouldBe "Lærerskolen"
+            offentligBekymringsmelding.offentligMelder.virksomhet.orgnr shouldBe "123455789"
+            offentligBekymringsmelding.offentligMelder.virksomhet.adresse.adresselinje1 shouldBe "Rosenkrantzgaten 3"
+            offentligBekymringsmelding.offentligMelder.virksomhet.adresse.adresselinje2 shouldBe ""
+            offentligBekymringsmelding.offentligMelder.virksomhet.adresse.adresselinje3 shouldBe ""
+            offentligBekymringsmelding.offentligMelder.virksomhet.adresse.postnummer shouldBe "5003"
+            offentligBekymringsmelding.offentligMelder.virksomhet.adresse.poststed shouldBe "Bergen"
+
+            // Barn
+            offentligBekymringsmelding.offentligBarn[0].fnr shouldBe "28071364498"
+            offentligBekymringsmelding.offentligBarn[0].ufoedt shouldBe false
+            offentligBekymringsmelding.offentligBarn[0].personnavn shouldBe "Barn Barnesen"
+            offentligBekymringsmelding.offentligBarn[0].telefonnummer shouldBe "12121212"
+            offentligBekymringsmelding.offentligBarn[0].adresse.adresselinje1 shouldBe "Rådhusgaten 10"
+            offentligBekymringsmelding.offentligBarn[0].adresse.adresselinje2 shouldBe ""
+            offentligBekymringsmelding.offentligBarn[0].adresse.adresselinje3 shouldBe ""
+            offentligBekymringsmelding.offentligBarn[0].adresse.postnummer shouldBe "5020"
+            offentligBekymringsmelding.offentligBarn[0].adresse.poststed shouldBe "Bergen"
+            offentligBekymringsmelding.offentligBarn[0].orientert shouldBe false
+            offentligBekymringsmelding.offentligBarn[0].orientertGrunn shouldBe "Synes det er vanskelig å snakke om dette."
+            offentligBekymringsmelding.offentligBarn[1].fnr shouldBe "16081688781"
+            offentligBekymringsmelding.offentligBarn[1].ufoedt shouldBe false
+            offentligBekymringsmelding.offentligBarn[1].personnavn shouldBe "Bare Barnet"
+            offentligBekymringsmelding.offentligBarn[1].telefonnummer shouldBe "13131313"
+            offentligBekymringsmelding.offentligBarn[1].adresse.adresselinje1 shouldBe "Rådhusgaten 10"
+            offentligBekymringsmelding.offentligBarn[1].adresse.adresselinje2 shouldBe ""
+            offentligBekymringsmelding.offentligBarn[1].adresse.adresselinje3 shouldBe ""
+            offentligBekymringsmelding.offentligBarn[1].adresse.postnummer shouldBe "5020"
+            offentligBekymringsmelding.offentligBarn[1].adresse.poststed shouldBe "Bergen"
+            offentligBekymringsmelding.offentligBarn[1].orientert shouldBe false
+            offentligBekymringsmelding.offentligBarn[1].orientertGrunn shouldBe "Synes det er vanskelig å snakke om dette."
+
+            // Foresatte
+            offentligBekymringsmelding.foresatte[0].personnavn shouldBe "Foresatt Foresatt"
+            offentligBekymringsmelding.foresatte[0].telefonnummer shouldBe "45444342"
+            offentligBekymringsmelding.foresatte[0].orientert shouldBe true
+            offentligBekymringsmelding.foresatte[0].personnavn shouldBe "Foresatt Foresatt"
+
+            offentligBekymringsmelding.behovForTolk shouldBe "Nei, de snakker norsk."
+            offentligBekymringsmelding.andreHjelpeinstanser shouldBe "Nei, ikke vært i kontakt med andre hjelpeinstanser."
+            offentligBekymringsmelding.melding.melding shouldBe "Her kommer selve innholdet i bekymringsmeldingen!"
+            offentligBekymringsmelding.melding.historie shouldBe "Her kommer selve historien i bekymringsmeldingen!"
+
+            offentligBekymringsmelding.sendingstidspunkt shouldBe LocalDateTime.parse("2020-03-16T13:29:33")
+            offentligBekymringsmelding.leveringskanal shouldBe "Fagsystem"
+        }
+
+        "Test at eksempel på JSON-fil validerer med generert POJO for offentlig bekymringsmelding v2" {
+            val resource = IOUtils.toString(Thread.currentThread().contextClassLoader.getResourceAsStream("bekymringsmelding-json-schema/examples/offentligBekymringsmelding.json"), "UTF-8")
+            val offentligBekymringsmelding = objectMapper.readValue(resource, OffentligBekymringsmeldingV2::class.java)
 
             offentligBekymringsmelding.kommunenummer shouldBe "1201"
             offentligBekymringsmelding.kommunenavn shouldBe "Bergen"

@@ -15,7 +15,7 @@
       "type": "string",
       "pattern": "^(.*)$"
     },
-    "foresattV2": {
+    "foresatt": {
       "type": "object",
       "required": [
         "personnavn",
@@ -67,14 +67,14 @@
       "type": "string",
       "pattern": "^(.*)$"
     },
-    "offentligMelderV2": {
+    "offentligMelder": {
       "type": "object",
       "required": [
         "personnavn",
         "rolle",
         "telefonnummer",
         "epost",
-        "virksomhetV2"
+        "virksomhet"
       ],
       "properties": {
         "personnavn": {
@@ -92,7 +92,7 @@
           "type": "string",
           "pattern": "^[A-Za-zæøåÆØÅ0-9-_]+(\\.[A-Za-zæøåÆØÅ0-9-_]+)*@[A-Za-zæøåÆØÅ0-9-]+(\\.[A-Za-zæøåÆØÅ0-9-]+)*(\\.[A-Za-z]{2,})$"
         },
-        "virksomhetV2": {
+        "virksomhet": {
           "type": "object",
           "required": [
             "navn",
@@ -108,13 +108,13 @@
               "pattern": "^(.*)$"
             },
             "adresse": {
-              "$ref": "adresse.json"
+              "$ref": "../adresse.json"
             }
           }
         }
       }
     },
-    "offentligBarnV2": {
+    "offentligBarn": {
       "type": "array",
       "minItems": 1,
       "items": {
@@ -140,7 +140,7 @@
             "type": "string"
           },
           "adresse": {
-            "$ref": "adresse.json"
+            "$ref": "../adresse.json"
           },
           "orientert": {
             "$ref": "#/definitions/orientert"
@@ -156,7 +156,7 @@
       "minItems": 1,
       "maxItems": 2,
       "items": {
-        "$ref": "#/definitions/foresattV2"
+        "$ref": "#/definitions/foresatt"
       }
     },
     "behovForTolk": {
@@ -165,7 +165,7 @@
     "andreHjelpeinstanser": {
       "type": "string"
     },
-    "meldingV2": {
+    "melding": {
       "type": "object",
       "required": [
         "melding",

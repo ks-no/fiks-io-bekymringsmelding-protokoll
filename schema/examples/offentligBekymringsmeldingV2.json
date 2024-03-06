@@ -1,0 +1,72 @@
+{
+  "kommunenummer": "1201",
+  "kommunenavn": "Bergen",
+  "bydelsnummer": "02",
+  "bydelsnavn": "Bergenhus",
+  "offentligMelder": {
+    "personnavn": "Navnesen Navn Mellomnavn",
+    "rolle": "Lærer",
+    "telefonnummer": "99999999",
+    "epost": "lærer@skole.no",
+    "virksomhet": {
+      "navn": "Lærerskolen",
+      "orgnr": "123455789",
+      "adresse": {
+        "adresselinje1": "Rosenkrantzgaten 3",
+        "adresselinje2": "",
+        "adresselinje3": "",
+        "postnummer": "5003",
+        "poststed": "Bergen"
+      }
+    }
+  },
+  "offentligBarn": [
+    {
+      "fnr": "28071364498",
+      "ufoedt": false,
+      "personnavn": "Barn Barnesen",
+      "telefonnummer": "12121212",
+      "adresse": {
+        "adresselinje1": "Rådhusgaten 10",
+        "adresselinje2": "",
+        "adresselinje3": "",
+        "postnummer": "5020",
+        "poststed": "Bergen"
+      },
+      "orientert": false,
+      "orientertGrunn": "Synes det er vanskelig å snakke om dette."
+    },
+    {
+      "fnr": "16081688781",
+      "ufoedt": false,
+      "personnavn": "Bare Barnet",
+      "telefonnummer": "13131313",
+      "adresse": {
+        "adresselinje1": "Rådhusgaten 10",
+        "adresselinje2": "",
+        "adresselinje3": "",
+        "postnummer": "5020",
+        "poststed": "Bergen"
+      },
+      "orientert": false,
+      "orientertGrunn": "Synes det er vanskelig å snakke om dette."
+    }
+  ],
+  "foresatte": [
+    {
+      "personnavn": "Foresatt Foresatt",
+      "telefonnummer": "45444342",
+      "orientert": true,
+      "orientertGrunn": ""
+    }
+  ],
+  "behovForTolk": "Nei, de snakker norsk.",
+  "andreHjelpeinstanser": "Nei, ikke vært i kontakt med andre hjelpeinstanser.",
+  "melding": {
+    "melding": "Her kommer selve innholdet i bekymringsmeldingen!",
+    "historie": "Her kommer selve historien i bekymringsmeldingen!",
+    "andreSynspunkter": "Her kommer andre synspunkter i bekymringsmeldingen!"
+  },
+  "sendingstidspunkt": "2020-03-16T13:29:33",
+  "leveringskanal": "Fagsystem"
+}

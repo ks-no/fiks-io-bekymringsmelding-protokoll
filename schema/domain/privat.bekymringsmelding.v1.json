@@ -43,7 +43,7 @@
           "pattern": "^[+]?[0-9]+([- ][0-9]+)*$"
         },
         "adresse": {
-          "$ref": "adresse.json"
+          "$ref": "./adresse.json"
         }
       }
     },
@@ -67,7 +67,7 @@
             "type": "string"
           },
           "adresse": {
-            "$ref": "adresse.json"
+            "$ref": "./adresse.json"
           }
         }
       }

@@ -16,7 +16,7 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       github.event_name == 'push' ||
       (github.event_name == 'pull_request' && startsWith(github.head_ref, 'dependabot/'))
-    uses: ks-no/github-actions-public/.github/workflows/java-library-internal-build.yml@main
+    uses: ks-no/github-actions-public/.github/workflows/java-library-maven-central-build.yml@main
     with:
       java_version: 'java11'
       is_release: false
